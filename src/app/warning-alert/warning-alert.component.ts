@@ -12,7 +12,7 @@ export class WarningAlertComponent implements OnInit {
   ngOnInit() {
   }
 
-  alert = () => {
+  alert() {
     alert("This is a warning!");
   }
 }

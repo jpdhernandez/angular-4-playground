@@ -12,7 +12,7 @@ export class SuccessAlertComponent implements OnInit {
   ngOnInit() {
   }
   
-  alert = () => {
+  alert() {
     alert("This is a success!");
   }
 }
