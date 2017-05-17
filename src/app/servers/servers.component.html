@@ -11,4 +11,11 @@
         (click)="onServerCreate()">Add Server</button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <p>{{serverCreationStatus}}</p>
+<input type="text"
+       class="form-control"
+       [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary"
+        [disabled]="!userName.length"
+        (click)="resetUserName()">Reset Username</button>
 <app-server></app-server>
