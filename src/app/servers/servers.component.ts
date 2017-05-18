@@ -11,6 +11,12 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   serverName = "";
   userName = "";
+  servers = ['Test1', 'Test2'];
+  isToggled: boolean = true;
+  toggleCounter = 0;
+  toggleArray = [];
+  enableStyle:boolean = false;
+  enableClass:boolean = false;
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +29,7 @@ export class ServersComponent implements OnInit {
 
   onServerCreate() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
   }
 
   onUpdateServerName(event: any) {
@@ -32,6 +39,20 @@ export class ServersComponent implements OnInit {
   resetUserName() {
     if (this.userName.length) {
       this.userName = "";
+    }
+  }
+
+  getColor() {
+    return !!this.enableStyle ? 'blue' : 'white';
+  }
+
+  toggleParagraph() {
+    this.isToggled = !this.isToggled;
+    this.toggleArray.push(new Date().getTime());
+
+    if (this.toggleCounter >= 5) {
+      this.enableStyle = true;
+      this.enableClass = true;
     }
   }
 }

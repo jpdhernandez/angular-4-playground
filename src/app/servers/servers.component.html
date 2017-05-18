@@ -23,5 +23,10 @@
 <button class="btn btn-primary"
         [disabled]="!userName.length"
         (click)="resetUserName()">Reset Username</button>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<button class="btn btn-primary"
+        (click)="toggleParagraph()">Display Details</button>
+<p *ngIf="isToggled"
+   [ngStyle]="{backgroundColor: getColor()}"
+   [ngClass]="{enabled: enableClass}">"Secret password = banana"</p>
+<p *ngFor="let item of toggleArray">{{item}}</p>
