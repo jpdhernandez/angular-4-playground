@@ -13,10 +13,7 @@ export class ServersComponent implements OnInit {
   userName = "";
   servers = ['Test1', 'Test2'];
   isToggled: boolean = true;
-  toggleCounter = 0;
   toggleArray = [];
-  enableStyle:boolean = false;
-  enableClass:boolean = false;
 
   constructor() {
     setTimeout(() => {
@@ -42,17 +39,8 @@ export class ServersComponent implements OnInit {
     }
   }
 
-  getColor() {
-    return !!this.enableStyle ? 'blue' : 'white';
-  }
-
   toggleParagraph() {
     this.isToggled = !this.isToggled;
-    this.toggleArray.push(new Date().getTime());
-
-    if (this.toggleCounter >= 5) {
-      this.enableStyle = true;
-      this.enableClass = true;
-    }
+    this.toggleArray.push(new Date);
   }
 }
