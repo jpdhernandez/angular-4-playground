@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ServerElementComponent implements OnInit {
   // Element will now be available to parent component hosting server-element
   // 'srvElement is an alias'
+  // @Input makes properties bindable from outside from parent component using this compnent
   @Input('srvElement') element: {type: string, name: string, content: string};
 
   constructor() { }
