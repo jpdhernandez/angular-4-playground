@@ -1,7 +1,8 @@
 <div class="panel panel-default">
-  <div class="panel-heading">{{ element.name }}</div>
+  <!--<div class="panel-heading">{{ element.name }}</div>-->
+  <div class="panel-heading" #heading>{{ name }}</div>
   <div class="panel-body">
-    // Any content that it finds between where this component is used in the template will be projected
+    <!--Any content that it finds between where this component is used in the template will be projected-->
     <ng-content></ng-content>
   </div>
 </div>
